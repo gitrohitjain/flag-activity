@@ -17,3 +17,5 @@ Once the position is identified, the timer based alert can be generated based on
 Model used for this task : https://docs.ultralytics.com/tasks/pose/
 
 For other configurations, such as defining the restricted area or setting the time thresholds for flagging alert, can be done in config.yaml file.
+
+To run the code, clone the repo, change to repo root directory and execute : python mapper.py 
