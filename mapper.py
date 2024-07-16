@@ -112,8 +112,7 @@ class Tracker:
                         else:
                             self.ids_time[id_] = {
                                 "standing": 0,
-                                "sitting": 0,
-                                "unknown": 0
+                                "sitting": 0
                             }
                     else:
                         if id_ in self.ids_time:

@@ -1,9 +1,9 @@
-video_path: "/home/vulcan/work/line/project/shop.mp4"
+video_path: "/home/work/line/project/clipped1.mp4"
 
-save_folder: "/home/vulcan/work/line/project/track_out"
+save_folder: "/home/work/line/project/track_out"
 
 yolo:
-  model_type: "yolov8x-pose.pt"
+  model_type: "yolov8n-pose.pt"
   conf: 0.5
   verbose: False
   max_det: 50

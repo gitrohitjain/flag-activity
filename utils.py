@@ -56,7 +56,7 @@ def is_sitting_or_standing(keypoints):
         if knee_angle_left < sitting_angle and knee_angle_right < sitting_angle:
             return "sitting" #confident
     
-    return "standing" #or sitting can be configured based on application
+    return "unknown" #could be configured as standing or sitting based on application
 
 
 def is_person_in_restricted_area(kps_, restricted_area_rect_coords):
