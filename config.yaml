@@ -1,0 +1,28 @@
+video_path: "/home/vulcan/work/line/project/shop.mp4"
+
+save_folder: "/home/vulcan/work/line/project/track_out"
+
+yolo:
+  model_type: "yolov8x-pose.pt"
+  conf: 0.5
+  verbose: False
+  max_det: 50
+  persist: True
+
+restricted_area:
+  x1: 0
+  y1: 0
+  x2: 200
+  y2: 360
+
+obj_to_track: ["person"]
+
+alarm:
+  alarm_time_standing: 1
+  alarm_time_sitting: 1
+
+colors:
+  ok: [0, 255, 0]
+  danger: [0, 0, 255]
+
+
