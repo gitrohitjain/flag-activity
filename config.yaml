@@ -4,10 +4,11 @@ save_folder: "/home/work/line/project/track_out"
 
 yolo:
   model_type: "yolov8n-pose.pt"
-  conf: 0.5
+  conf: 0.4
   verbose: False
   max_det: 50
   persist: True
+  tracker_type: "botsort.yaml"
 
 restricted_area:
   x1: 0

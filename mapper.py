@@ -15,7 +15,7 @@ det_conf = MODEL_CONFIG['conf']
 verbose = MODEL_CONFIG['verbose']
 max_det = MODEL_CONFIG['max_det']
 persist = MODEL_CONFIG['persist']
-
+tracker_type = MODEL_CONFIG['tracker_type']
 video_path = configs['video_path']
 
 restricted_area = configs['restricted_area']
@@ -74,7 +74,7 @@ class Tracker:
 
             if success:
                 
-                self.results = self.model.track(frame, persist=persist, verbose=verbose, conf=det_conf)[0]
+                self.results = self.model.track(frame, persist=persist, verbose=verbose, conf=det_conf, tracker=tracker_type)[0]
 
                 try:
                     bbox_details = self.get_details()
