@@ -15,3 +15,5 @@ Having information of above key points joints of human body it is possible to es
 Once the position is identified, the timer based alert can be generated based on the position as well whether a person is in restricted area.
 
 Model used for this task : https://docs.ultralytics.com/tasks/pose/
+
+For other configurations, such as defining the restricted area or setting the time thresholds for flagging alert, can be done in config.yaml file.
