@@ -19,3 +19,5 @@ Model used for this task : https://docs.ultralytics.com/tasks/pose/
 For other configurations, such as defining the restricted area or setting the time thresholds for flagging alert, can be done in config.yaml file.
 
 To run the code, clone the repo, change to repo root directory and execute : ```python mapper.py```
+
+After script is successfully run, output frames will saved in save_folder, to form a video out of these frames, navigate to inside save_folder and execute : ```sudo apt install ffmpeg | ffmpeg -framerate 30 -pattern_type glob -i "*.jpg" -c:v libx264 -r 30 -pix_fmt yuv420p output.mp4```
