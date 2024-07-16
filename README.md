@@ -28,3 +28,23 @@ For other configurations, such as defining the restricted area or setting the ti
 To run the code, clone the repo, change to repo root directory and execute : ```python mapper.py```
 
 After script is successfully run, output frames will saved in save_folder, to form a video out of these frames, navigate to inside save_folder and execute : ```sudo apt install ffmpeg | ffmpeg -framerate 30 -pattern_type glob -i "*.jpg" -c:v libx264 -r 30 -pix_fmt yuv420p output.mp4```
+
+Scope for improvements/ Optimizations:
+- **Handling Multiple Camera stream**: To add functionality to process multiple camera streams considering CPU processing, run_ai in mapper.py can be updated to use different threads on CPU.
+```
+Use of threading
+
+# Thread video file 1
+import threading
+tracker_thread1 = threading.Thread(target = run_ai,
+                                   args = video_file1_path,
+                                   daemon=True)
+
+# Thread used for the webcam
+tracker_thread2 = threading.Thread(target = run_ai,
+                                   args = video_file2_path,
+                                   daemon = True)
+```
+
+
+-  **Handle missing frames**: Since this approach to solving the problem uses tracker, specifically BoTSORT tracker, it can handle the scenario where detections are missing because of loss of frames. The tracker uses the Kalman Filter for motion prediction which can predict the future state -position as well as velocity- of each tracked object based on its previous states. When a new detection is available, the Kalman filter updates the predicted state with the new measurement, adjusting for any discrepancies. The Hungarian algorithm is used in conjunction with the Kalman filter to associate predicted states with new detections. 
